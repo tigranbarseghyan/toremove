@@ -18,7 +18,7 @@ jobs:
         run: go build -v ./...
 
       - name: Check the content
-        run: ls
+        run: ls -l
 
       - name: Run
         run: ./main
