@@ -25,6 +25,9 @@ jobs:
         with:
           go-version: ${{ inputs.goVersion }}
 
+      - name: Go Init
+        run: go mod init main
+
       - name: Build
         run: go build -v ./...
 
