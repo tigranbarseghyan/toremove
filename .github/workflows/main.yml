@@ -6,7 +6,7 @@ on:
       goVersion:
         description: 'The Go version'
         required: true
-        default: 1.15
+        default: 1.17
         type: choice
         options:
         - 1.15
