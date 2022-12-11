@@ -1,0 +1,20 @@
+name: Pull go image and run
+
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: Some boolean field
+        required: false
+        type: boolean
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull the self created image from dockerhub
+        run: docker pull tigranbar/go_image
+
+      - name: Run the pulled image
+        run: docker run -it tigranbar/go_image
