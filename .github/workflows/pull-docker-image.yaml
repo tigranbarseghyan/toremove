@@ -17,4 +17,4 @@ jobs:
         run: docker pull tigranbar/go_image
 
       - name: Run the pulled image
-        run: docker run -it tigranbar/go_image
+        run: docker run tigranbar/go_image:latest
