@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Pull the self created image from dockerhub
-        run: docker pull tigranbar/go_image
+        run: docker pull lyovtigranyan619/go_image
 
       - name: Run the pulled image
-        run: docker run tigranbar/go_image:latest
+        run: docker run lyovtigranyan619/go_image:latest
