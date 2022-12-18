@@ -10,11 +10,14 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    strategy: 
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+        version: [1.15, 1.16, 1.17]
+    runs-on: ${{ matrix.os }}
     steps:
       - name: Pull the self created image from dockerhub
-        run: docker pull tigranbar/go_image
+        run: docker pull ${{ secrets.DOCKERHUB_USERNAME }}/go_image
 
       - name: Run the pulled image
-        run: docker run tigranbar/go_image:latest
+        run: docker run ${{ secrets.DOCKERHUB_USERNAME }}/go_image:latest
